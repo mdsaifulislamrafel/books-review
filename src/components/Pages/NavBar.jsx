@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
     return (
-        <header className="p-4 dark:bg-gray-100 dark:text-gray-800">
+        <header className="p-4 max-w-7xl mx-auto dark:bg-gray-100 dark:text-gray-800">
             <div className="container flex justify-between h-16 mx-auto">
                 <a rel="noopener noreferrer" href="#" aria-label="Back to homepage" className="flex items-center p-2">
                     <h2 className="text-black text-3xl font-bold">Book Vibe</h2>
