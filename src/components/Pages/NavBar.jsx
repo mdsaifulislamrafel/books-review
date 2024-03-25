@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const NavBar = () => {
     return (
         <header className="p-4 dark:bg-gray-100 dark:text-gray-800">
@@ -6,9 +8,28 @@ const NavBar = () => {
                     <h2 className="text-black text-3xl font-bold">Book Vibe</h2>
                 </a>
                 <ul className=" hidden items-center space-x-3 lg:flex ">
-                    <li className="cursor-pointer  rounded-full hover:border-2 hover:border-[#23BE0A]  px-6 py-2 text-black hover:text-[#23BE0A]">Home</li>
-                    <li className="cursor-pointer  rounded-full hover:border-2 hover:border-[#23BE0A] px-6 py-2 text-black hover:text-[#23BE0A]">Services</li>
-                    <li className="cursor-pointer  rounded-full hover:border-2 hover:border-[#23BE0A] px-6 py-2 text-black hover:text-[#23BE0A]">About</li>
+                    <NavLink to="/" className={({ isActive, isPending }) =>
+                        isActive
+                            ? "active text-[#23BE0A] border-2 transition border-[#23BE0A]  rounded-full px-6 py-2"
+                            : isPending
+                                ? "pending"
+                                : "cursor-pointer text-black px-6 py-2"
+                    }  >Home</NavLink>
+                    <NavLink to="/markBooks" className={({ isActive, isPending }) =>
+                        isActive
+                            ? "active text-[#23BE0A] border-2 transition border-[#23BE0A]  rounded-full px-6 py-2"
+                            : isPending
+                                ? "pending"
+                                : "cursor-pointer text-black px-6 py-2"
+                    }  >Listed Books</NavLink>
+                    <NavLink to="/chart" className={({ isActive, isPending }) =>
+                        isActive
+                            ? "active text-[#23BE0A] border-2 transition border-[#23BE0A]  rounded-full px-6 py-2"
+                            : isPending
+                                ? "pending"
+                                : "cursor-pointer text-black px-6 py-2 "
+                    }  >Pages to Read</NavLink>
+
                 </ul>
                 <div className="items-center md:gap-2 flex-shrink-0 hidden lg:flex">
                     <li className="cursor-pointer flex gap-2 list-none rounded-lg px-6 py-2 text-white bg-[#23BE0A]">
