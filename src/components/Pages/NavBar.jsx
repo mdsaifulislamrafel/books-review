@@ -4,9 +4,9 @@ const NavBar = () => {
     return (
         <header className="p-4 max-w-7xl mx-auto dark:bg-gray-100 dark:text-gray-800">
             <div className="container flex justify-between h-16 mx-auto">
-                <a rel="noopener noreferrer" href="#" aria-label="Back to homepage" className="flex items-center p-2">
+                <NavLink to="/" aria-label="Back to homepage" className="flex items-center p-2">
                     <h2 className="text-black text-3xl font-bold">Book Vibe</h2>
-                </a>
+                </NavLink>
                 <ul className=" hidden items-center space-x-3 lg:flex ">
                     <NavLink to="/" className={({ isActive, isPending }) =>
                         isActive

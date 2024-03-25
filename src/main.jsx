@@ -10,6 +10,7 @@ import Error from './components/Pages/Error';
 import Home from './components/Pages/Home';
 import MarkBooks from './components/Pages/MarkBooks';
 import Chart from './components/Pages/Chart';
+import BookDetails from './components/Pages/BookDetails';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/markBooks",
         element: <MarkBooks />
+      },
+      {
+        path: "/bookDetails/:id",
+        element: <BookDetails />
       },
       {
         path: "/chart",
