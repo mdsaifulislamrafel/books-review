@@ -33,10 +33,10 @@ const NavBar = () => {
                 </ul>
                 <div className="items-center md:gap-2 flex-shrink-0 hidden lg:flex">
                     <li className="cursor-pointer flex gap-2 list-none rounded-lg px-6 py-2 text-white bg-[#23BE0A]">
-                        Contact
+                        Sign in
                     </li>
                     <li className="cursor-pointer flex gap-2 list-none rounded-lg px-6 py-2 text-white bg-[#59C6D2]">
-                        Contact
+                        Sign up
                     </li>
                 </div>
                 <button className="p-4 lg:hidden">
