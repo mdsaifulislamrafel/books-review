@@ -11,7 +11,8 @@ import Home from './components/Pages/Home';
 import MarkBooks from './components/Pages/MarkBooks';
 import Chart from './components/Pages/Chart';
 import BookDetails from './components/Pages/BookDetails';
-import  { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
+import LatestBook from './components/Pages/LatestBook';
 
 const router = createBrowserRouter([
   {
@@ -32,9 +33,14 @@ const router = createBrowserRouter([
         element: <BookDetails />
       },
       {
+        path: "/latest-books",
+        element: <LatestBook />
+      },
+      {
         path: "/chart",
         element: <Chart />
-      }
+      },
+
     ]
   },
 ]);
