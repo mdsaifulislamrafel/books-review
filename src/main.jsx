@@ -11,6 +11,7 @@ import Home from './components/Pages/Home';
 import MarkBooks from './components/Pages/MarkBooks';
 import Chart from './components/Pages/Chart';
 import BookDetails from './components/Pages/BookDetails';
+import  { Toaster } from 'react-hot-toast';
 
 const router = createBrowserRouter([
   {
@@ -41,5 +42,6 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <Toaster />
   </React.StrictMode>,
 )

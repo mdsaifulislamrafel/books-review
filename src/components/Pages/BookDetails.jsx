@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import DataHook from '../DataHook/DataHook';
-import { savedLocalStorage } from '../utility/localStorage';
+import { savedLocalStorage, wishSavedLocalStorage } from '../utility/localStorage';
+import toast from 'react-hot-toast';
 
 const BookDetails = () => {
     const [singleBook, setSingleBook] = useState({});
     const { id: index } = useParams();
     const idx = parseInt(index);
     const { data } = DataHook();
+    const [addedToReadingList, setAddedToReadingList] = useState(false);
     useEffect(() => {
         if (data) {
             const singleBookData = data.find(item => item.id === idx);
@@ -20,6 +22,15 @@ const BookDetails = () => {
 
     const handelReading = () => {
         savedLocalStorage(singleBook)
+        setAddedToReadingList(true);
+    };
+
+    const handleWishlist = () => {
+        if (!addedToReadingList) {
+            wishSavedLocalStorage(singleBook);
+        } else {
+            toast.error("Book already added to reading list");
+        }
     };
     return (
         <section className="dark:bg-gray-100 max-w-7xl mx-auto dark:text-gray-800">
@@ -57,9 +68,9 @@ const BookDetails = () => {
                         </div>
                     </ul>
                     <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                        <button onClick={handelReading} className="rounded-lg border-2 w-24 border-sky-500 hover:border-0 px-4 py-3 text-xl text-sky-500 duration-200 hover:bg-red-500 hover:text-white">Button</button>
+                        <button onClick={handelReading} className="rounded-lg border-2 w-24 border-sky-500 hover:border-0 px-4 py-3 text-xl text-sky-500 duration-200 hover:bg-red-500 hover:text-white">Read </button>
 
-                        <button className="text-xl w-32 h-14 rounded-lg bg-sky-500 text-white relative overflow-hidden group z-10 hover:text-white duration-1000"><span className="absolute bg-sky-600 size-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span><span className="absolute bg-sky-800 size-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>Button</button>
+                        <button onClick={handleWishlist} className="text-xl w-32 h-14 rounded-lg bg-sky-500 text-white relative overflow-hidden group z-10 hover:text-white duration-1000"><span className="absolute bg-sky-600 size-36 rounded-full group-hover:scale-100 scale-0 -z-10 -left-2 -top-10 group-hover:duration-500 duration-700 origin-center transform transition-all"></span><span className="absolute bg-sky-800 size-36 -left-2 -top-10 rounded-full group-hover:scale-100 scale-0 -z-10 group-hover:duration-700 duration-500 origin-center transform transition-all"></span>Wishlist</button>
 
                     </div>
                 </div>
