@@ -13,6 +13,8 @@ import Chart from './components/Pages/Chart';
 import BookDetails from './components/Pages/BookDetails';
 import { Toaster } from 'react-hot-toast';
 import LatestBook from './components/Pages/LatestBook';
+import LatestDetails from './components/Pages/LatestDetails';
+import Contact from './components/Pages/Contact';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,14 @@ const router = createBrowserRouter([
       {
         path: "/latest-books",
         element: <LatestBook />
+      },
+      {
+        path: "/latest-details/:id",
+        element: <LatestDetails />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
       },
       {
         path: "/chart",

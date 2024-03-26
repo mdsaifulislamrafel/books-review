@@ -5,7 +5,7 @@ const NavBar = () => {
         <header className="p-4 max-w-7xl mx-auto dark:bg-gray-100 dark:text-gray-800">
             <div className="container flex justify-between h-16 mx-auto">
                 <NavLink to="/" aria-label="Back to homepage" className="flex items-center p-2">
-                    <h2 className="text-black text-3xl font-bold">Book Vibe</h2>
+                    <h2 className="text-3xl bg-300% font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient">Book Vibe</h2>
                 </NavLink>
                 <ul className=" hidden items-center lg:flex ">
                     <NavLink to="/" className={({ isActive, isPending }) =>
@@ -36,13 +36,13 @@ const NavBar = () => {
                                 ? "pending"
                                 : "cursor-pointer text-black px-6 py-2 "
                     }  >Programming Books</NavLink>
-                    <NavLink to="" className={({ isActive, isPending }) =>
+                    <NavLink to="/contact" className={({ isActive, isPending }) =>
                         isActive
                             ? "active text-[#23BE0A] border-2 transition border-[#23BE0A]  rounded-full px-6 py-2"
                             : isPending
                                 ? "pending"
                                 : "cursor-pointer text-black px-6 py-2 "
-                    }  >Blogs</NavLink>
+                    }  >Contact</NavLink>
 
 
                 </ul>
