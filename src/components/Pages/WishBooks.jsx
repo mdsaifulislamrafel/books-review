@@ -7,7 +7,7 @@ const WishBooks = ({ wish }) => {
     const { bookName, author, image, rating, category, tags, yearOfPublishing, publisher, totalPages } = wish;
     return (
         <div className="mt-8">
-            <div className="flex items-center gap-5 rounded-lg  p-6 border md:w-[full] bg-white">
+            <div className="md:flex items-center gap-5 rounded-lg  p-6 border md:w-[full] bg-white">
                 <div className="bg-[#F3F3F3] flex items-center justify-center p-5">
                     <img alt="card navigate ui" className="w-[120px]  object-cover  rounded-lg " src={image} />
                 </div>
@@ -28,11 +28,11 @@ const WishBooks = ({ wish }) => {
                         <p className="text-sm flex items-center gap-1"><GoPeople />Publisher : {publisher}</p>
                         <p className="text-sm flex items-center gap-1 justify-center"><RiFolderChartLine />{totalPages}</p>
                     </div>
-                    <div className="text-sm flex items-center gap-4">
+                    <div className="text-sm flex flex-wrap items-center gap-4">
                         <p className="bg-[#e0eeff] py-3 px-5 rounded-full text-[#328EFF]">category: {category}</p>
                         <p className="bg-[#fff3e0] py-3 px-5 rounded-full text-[#FFAC33]">rating: {rating}</p>
                         <button className="cursor-pointer flex gap-2 list-none rounded-full px-4 py-3 text-white bg-[#23BE0A]">
-                            View The List
+                            View Details
                         </button>
                     </div>
                 </div>

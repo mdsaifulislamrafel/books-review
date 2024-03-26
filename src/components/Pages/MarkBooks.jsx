@@ -13,7 +13,7 @@ const MarkBooks = () => {
 
     return (
         <div className="max-w-7xl mx-auto text-center">
-            <h1 className="text-3xl font-bold bg-[#f3f3f3] py-8 rounded-lg">Marks Book {localSaveData.length}</h1>
+            <h1 className="text-3xl font-bold bg-[#f3f3f3] py-8 rounded-lg">Books</h1>
             <div className="text-start text-3xl mt-5">
                 <Tabs>
                     <TabList>
