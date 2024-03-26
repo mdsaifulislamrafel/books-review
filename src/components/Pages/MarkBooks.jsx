@@ -11,23 +11,45 @@ import {
     MenuItem,
     Button,
 } from "@material-tailwind/react";
-
+import { useState } from "react";
 
 const MarkBooks = () => {
     const { localSaveData } = LocalSavedData();
     const { wishList } = LocalSavedData2();
+    const [filterType, setFilterType] = useState("ALL");
+
+    const handleFilterClick = (filter) => {
+        setFilterType(filter);
+    };
+
+    const sortBooks = (books, filter) => {
+        if (filter === "ALL") {
+            return books;
+        } else {
+            return books.slice().sort((a, b) => {
+                if (a[filter] > b[filter]) {
+                    return -1;
+                }
+                if (a[filter] < b[filter]) {
+                    return 1;
+                }
+                return 0;
+            });
+        }
+    };
 
     return (
         <div className="max-w-7xl mx-auto text-center">
             <h1 className="text-3xl font-bold bg-[#f3f3f3] py-8 rounded-lg">Books</h1>
             <Menu>
                 <MenuHandler>
-                    <Button className="bg-[#23BE0A] mt-5 w-fit">Menu</Button>
+                    <Button className="bg-[#23BE0A] mt-5 w-fit">Sort By</Button>
                 </MenuHandler>
                 <MenuList className="p-5 w-40 border-2 space-y-3">
-                    <MenuItem>ALL</MenuItem>
-                    <MenuItem>Read</MenuItem>
-                    <MenuItem>Wish</MenuItem>
+                    <MenuItem onClick={() => handleFilterClick("ALL")}>ALL</MenuItem>
+                    <MenuItem onClick={() => handleFilterClick("rating")}>Rating</MenuItem>
+                    <MenuItem onClick={() => handleFilterClick("totalPages")}>Total Pages</MenuItem>
+                    <MenuItem onClick={() => handleFilterClick("yearOfPublishing")}>Year Of Publishing</MenuItem>
                 </MenuList>
             </Menu>
 
@@ -39,14 +61,14 @@ const MarkBooks = () => {
                     </TabList>
 
                     <TabPanel>
-                        {
-                            localSaveData.map((readBook) => <ReadBooks key={readBook.id} readBook={readBook}></ReadBooks>)
-                        }
+                        {sortBooks(localSaveData, filterType).map((readBook) => (
+                            <ReadBooks key={readBook.id} readBook={readBook}></ReadBooks>
+                        ))}
                     </TabPanel>
                     <TabPanel>
-                        {
-                            wishList.map((wish) => <WishBooks key={wish.id} wish={wish}></WishBooks>)
-                        }
+                        {sortBooks(wishList, filterType).map((wish) => (
+                            <WishBooks key={wish.id} wish={wish}></WishBooks>
+                        ))}
                     </TabPanel>
                 </Tabs>
             </div>

@@ -41,7 +41,7 @@ const Chart = () => {
     };
 
     return (
-        <div className='bg-[#f8f8f8] w-full h-[70vh] flex justify-center items-center'>
+        <div className='bg-[#f8f8f8] w-full h-[70vh] flex flex-wrap md:justify-center md:items-center'>
             <BarChart
                 width={800}
                 height={400}
