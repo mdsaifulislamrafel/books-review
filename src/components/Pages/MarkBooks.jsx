@@ -12,6 +12,8 @@ import {
     Button,
 } from "@material-tailwind/react";
 import { useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
+
 
 const MarkBooks = () => {
     const { localSaveData } = LocalSavedData();
@@ -43,21 +45,21 @@ const MarkBooks = () => {
             <h1 className="text-3xl font-bold bg-[#f3f3f3] py-8 rounded-lg">Books</h1>
             <Menu>
                 <MenuHandler>
-                    <Button className="bg-[#23BE0A] mt-5 w-fit">Sort By</Button>
+                    <Button className="bg-[#23BE0A] mt-5 w-fit md:w-44"><span className="flex items-center justify-center gap-2">Sort By <IoIosArrowDown className="text-2xl font-bold" /></span></Button>
                 </MenuHandler>
-                <MenuList className="p-5 w-40 border-2 space-y-3">
-                    <MenuItem onClick={() => handleFilterClick("ALL")}>ALL</MenuItem>
-                    <MenuItem onClick={() => handleFilterClick("rating")}>Rating</MenuItem>
-                    <MenuItem onClick={() => handleFilterClick("totalPages")}>Total Pages</MenuItem>
-                    <MenuItem onClick={() => handleFilterClick("yearOfPublishing")}>Year Of Publishing</MenuItem>
+                <MenuList className="p-5  w-44 border-2 space-y-3">
+                    <MenuItem className="hover:bg-green-400 rounded-lg py-2" onClick={() => handleFilterClick("ALL")}>ALL</MenuItem>
+                    <MenuItem className="hover:bg-green-400 rounded-lg py-2" onClick={() => handleFilterClick("rating")}>Rating</MenuItem>
+                    <MenuItem className="hover:bg-green-400 rounded-lg py-2" onClick={() => handleFilterClick("totalPages")}>Number of Pages</MenuItem>
+                    <MenuItem className="hover:bg-green-400 rounded-lg py-2" onClick={() => handleFilterClick("yearOfPublishing")}>Year Of Publishing</MenuItem>
                 </MenuList>
             </Menu>
 
             <div className="text-start text-3xl mt-5">
                 <Tabs>
-                    <TabList style={{ display: "flex", gap: "2px", padding: "0, 10px" }}>
-                        <Tab>Read Books</Tab>
-                        <Tab>Wishlist Books</Tab>
+                    <TabList style={{ display: "flex", gap: "2px" }}>
+                        <Tab><span className="text-xl font-bold md:text-2xl">Read Books</span></Tab>
+                        <Tab><span className="text-xl font-bold md:text-2xl">Wishlist Books</span></Tab>
                     </TabList>
 
                     <TabPanel>

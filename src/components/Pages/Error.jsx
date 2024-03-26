@@ -11,8 +11,6 @@ const Error = () => {
           <p className="text-2xl font-semibold md:text-3xl">Sorry, we could not find this page.</p>
           <p className="mt-4 mb-8 dark:text-gray-600">But do not worry, you can find plenty of other things on our homepage.</p>
           <Link to="/"
-            rel="noopener noreferrer"
-            href="#"
             className="px-8 py-3 font-semibold rounded dark:bg-violet-600 dark:text-gray-50"
           >
             Back to homepage

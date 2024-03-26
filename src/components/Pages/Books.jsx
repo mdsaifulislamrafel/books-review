@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+
 import { FaRegStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
@@ -11,7 +12,7 @@ const Books = ({ book }) => {
             </div>
             <div className="flex flex-wrap gap-2 border-t border-dashed dark:border-gray-600">
                 {
-                    tags.map((tag, index) => (<a key={index} className="px-3 py-1 text-[#23BE0A] bg-[#f4fcf3] rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">{tag}</a>))
+                    tags.map((tag, index) => (<p key={index} className="px-3 py-1 text-[#23BE0A] bg-[#f4fcf3] rounded-sm hover:underline dark:bg-violet-600 dark:text-gray-50">{tag}</p>))
                 }
             </div>
             <div className="grid gap-2">
