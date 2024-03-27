@@ -58,7 +58,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <NavLink to="/" aria-label="Back to homepage" className="flex items-center p-2">
-                    <h2 className="text-3xl bg-300% font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient">Book Vibe</h2>
+                    <h2 className="text-sm md:text-3xl bg-300% font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient">Book Vibe</h2>
                 </NavLink>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -111,8 +111,8 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end md:flex  space-x-2">
-                <button className="self-center px-8 py-3 rounded-lg bg-[#23BE0A] text-white font-bold ">Sign in</button>
-                <button className="self-center px-8 py-3 rounded-lg bg-[#59C6D2] text-white font-bold">Sign up</button>
+                <button className="self-center p-3  md:px-8 md:py-3 rounded-lg text-sm md:text-xl bg-[#23BE0A] text-white font-bold ">Sign in</button>
+                <button className="self-center p-3 md:px-8 md:py-3 rounded-lg text-sm md:text-xl bg-[#59C6D2] text-white font-bold">Sign up</button>
             </div>
         </div>
     );
