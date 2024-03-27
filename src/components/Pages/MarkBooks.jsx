@@ -18,6 +18,7 @@ import { IoIosArrowDown } from "react-icons/io";
 const MarkBooks = () => {
     const { localSaveData } = LocalSavedData();
     const { wishList } = LocalSavedData2();
+
     const [filterType, setFilterType] = useState("ALL");
 
     const handleFilterClick = (filter) => {
@@ -29,10 +30,10 @@ const MarkBooks = () => {
             return books;
         } else {
             return books.slice().sort((a, b) => {
-                if (a[filter] > b[filter]) {
+                if (a[filter] < b[filter]) {
                     return -1;
                 }
-                if (a[filter] < b[filter]) {
+                if (a[filter] > b[filter]) {
                     return 1;
                 }
                 return 0;
