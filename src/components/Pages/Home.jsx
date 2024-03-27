@@ -10,11 +10,11 @@ const Home = () => {
         setBooks(data);
     }, [data]);
     return (
-        <div className="max-w-7xl mx-auto">
+        <div>
             {/* banner */}
             <Banner />
             {/* banner */}
-            <div className="my-24">
+            <div className=" md:mt-24">
                 <section className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800">
                     <div className="container p-6 mx-auto space-y-8">
                         <div className="space-y-2 text-center">
