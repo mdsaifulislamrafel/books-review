@@ -14,7 +14,7 @@ const Home = () => {
             {/* banner */}
             <Banner />
             {/* banner */}
-            <div className=" md:mt-24">
+            <div className="md:w-[90%] mx-auto md:mt-20">
                 <section className="py-6 sm:py-12 dark:bg-gray-100 dark:text-gray-800">
                     <div className="container p-6 mx-auto space-y-8">
                         <div className="space-y-2 text-center">
