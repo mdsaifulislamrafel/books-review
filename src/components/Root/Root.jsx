@@ -3,9 +3,11 @@ import Header from "../Pages/Header";
 
 const Root = () => {
     return (
-        <div className="w-[90%] mx-auto">
+        <div className="w-[95%] md:w-[90%] mx-auto">
             <Header />
-            <Outlet />
+            <div className="mt-10">
+                <Outlet />
+            </div>
         </div>
     );
 };

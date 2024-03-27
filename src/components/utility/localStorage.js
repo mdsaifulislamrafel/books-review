@@ -20,6 +20,8 @@ export const getLocalStorage = () => {
 }
 
 
+
+
 // wishlist storage
 export const wishSavedLocalStorage = data => {
     let saveData = JSON.parse(localStorage.getItem("wishlist")) || [];
@@ -27,9 +29,9 @@ export const wishSavedLocalStorage = data => {
     if (!existing) {
         saveData.push(data);
         localStorage.setItem("wishlist", JSON.stringify(saveData));
-        toast.success('Book saved successfully');
+        // toast.success('Book saved successfully');
     } else {
-        toast.error('Book already saved');
+        // toast.error('Book already saved');
     }
 }
 

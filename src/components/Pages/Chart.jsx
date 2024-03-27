@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Legend, Tooltip } from 'recharts';
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 import LocalSavedData from '../DataHook/localSaveData';
 
 
@@ -41,32 +41,34 @@ const Chart = () => {
     };
 
     return (
-        <div className='bg-[#f8f8f8] w-full h-[70vh] flex flex-wrap md:justify-center md:items-center'>
-            <BarChart
-                width={800}
-                height={400}
-                data={data}
-                margin={{
-                    top: 20,
-                    right: 30,
-                    left: 20,
-                    bottom: 5,
-                }}
-            >
-                <Tooltip content={<CustomTooltip />} />
-                <Legend />
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
+        <div className='bg-[#f8f8f8] w-full h-[75vh] flex justify-center items-center'>
+            <ResponsiveContainer width="100%" height={500}>
+                <BarChart
+                    width={800}
+                    height={400}
+                    data={data}
+                    margin={{
+                        top: 20,
+                        right: 30,
+                        left: 20,
+                        bottom: 5,
+                    }}
+                >
+                    <Tooltip content={<CustomTooltip />} />
+                    <Legend />
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis />
 
-                <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
-                    {data.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
-                    ))}
-                </Bar>
+                    <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+                        {data.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+                        ))}
+                    </Bar>
 
-            </BarChart>
-        </div>
+                </BarChart>
+            </ResponsiveContainer>
+        </div >
     );
 };
 
